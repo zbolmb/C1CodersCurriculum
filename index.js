@@ -1,24 +1,12 @@
-function load() {
-    var clicksPerSecond = 0;
-    var clicks = 0;
-    var amountPerClick = 1;
-    var block1CPS = 1;
-    var block2CPS = 5;
-    var block1Cost = 10;
-    var block2Cost = 50;
-    var block1Count = 0;
-    var block2Count = 0;
-    if (localStorage.clicks) {
-        clicks = localStorage.clicks;
-    }
-    if (localStorage.clicksPerSecond) {
-        clicksPerSecond = localStorage.clicksPerSecond;
-    }
-    if (localStorage.amountPerClick) {
-        amountPerClick = localStorage.amountPerClick;
-    }
-
-}
+var clicksPerSecond = 0;
+var clicks = 0;
+var amountPerClick = 1;
+var block1CPS = 1;
+var block2CPS = 5;
+var block1Cost = 10;
+var block2Cost = 50;
+var block1Count = 0;
+var block2Count = 0;
 
 function click1() {
   if (clicks >= block1Cost) {
@@ -59,7 +47,6 @@ function render() {
   document.getElementById("cps2").innerHTML = block2CPS;
   document.getElementById("cost2").innerHTML = block2Cost;
   document.getElementById("count2").innerHTML = block2Count;
-
 }
 
 function updateCPS() {
@@ -67,4 +54,3 @@ function updateCPS() {
 }
 
 var gainz = setInterval(updateClicks, 1000);
-load();
