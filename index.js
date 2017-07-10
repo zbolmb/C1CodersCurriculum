@@ -13,6 +13,7 @@ function click1() {
     clicks = clicks - block1Cost;
     block1Count++;
     clicksPerSecond += block1CPS;
+    block1Cost = Math.round(block1Cost * 1.2);
     render();
     updateCPS();
   }
@@ -23,6 +24,7 @@ function click2() {
     clicks = clicks - block2Cost;
     block2Count++;
     clicksPerSecond += block2CPS;
+    block2Cost = Math.round(block2Cost * 1.2);
     render();
     updateCPS();
   }
