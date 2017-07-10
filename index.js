@@ -12,6 +12,7 @@ function click1() {
   if (clicks >= block1Cost) {
     clicks = clicks - block1Cost;
     block1s++;
+    clicksPerSecond += blocks1CPS;
   }
 }
 
@@ -19,11 +20,12 @@ function click2() {
   if (clicks >= block2Cost) {
     clicks = clicks - block2Cost;
     block2s++;
+    clicksPerSecond += blocks2CPS;
   }
 }
 
 var gainz = setInterval(updateClicks, 1000);
 
 function updateClicks() {
-  
+  clicks += clicksPerSecond;
 }
