@@ -39,7 +39,7 @@ function updateClicks() {
 }
 
 function render() {
-  document.getElementById("click_count").innerHTML = "Clicks: " + clicks;
+  document.getElementById("click_count").innerHTML = "Diamonds: " + clicks;
   document.getElementById("cps1").innerHTML = block1CPS;
   document.getElementById("cost1").innerHTML = block1Cost;
   document.getElementById("count1").innerHTML = block1Count;
@@ -50,7 +50,7 @@ function render() {
 }
 
 function updateCPS() {
-    document.getElementById("cps_count").innerHTML = "Clicks Per Second: " + clicksPerSecond;
+    document.getElementById("cps_count").innerHTML = "Diamonds Per Second: " + clicksPerSecond;
 }
 
 var gainz = setInterval(updateClicks, 1000);
