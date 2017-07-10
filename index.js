@@ -1,14 +1,3 @@
-var gainz = setInterval(updateClicks, 1000);
-
-if (localStorage.clickcount) {
-    clicks = localStorage.clickcount;
-} else {
-    localStorage.clickcount = 0;
-}
-if (localStorage.c)
-localStorage.setItem("clicks", 0);
-document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-
 function load() {
     var clicksPerSecond = 0;
     var clicks = 0;
@@ -76,3 +65,6 @@ function render() {
 function updateCPS() {
     document.getElementById("cps_count").innerHTML = "Clicks Per Second: " + clicksPerSecond;
 }
+
+var gainz = setInterval(updateClicks, 1000);
+load();
