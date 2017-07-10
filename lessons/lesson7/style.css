@@ -1,0 +1,50 @@
+.header {
+    text-align: center;
+}
+
+.columns {
+    text-align: center;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    background-color: #e1e8f0;
+    height: 100vh;
+}
+
+.c1 {
+    /*background-color: #e1e8f0;*/
+    /*height: 100vh;*/
+}
+
+.circle {
+    width:200px;
+    margin: 0 auto;
+}
+
+.circle:hover {
+    transform: scale(1.1);
+}
+
+
+.blocks {
+    text-align: center;
+    border-style: solid;
+    border-color: #5CB9C0;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 40px;
+    font-family: "Courier"
+
+}
+
+.blocks:hover {
+    background-color: #96F1F7;
+}
+
+.store {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Courier"
+}
