@@ -1,19 +1,35 @@
-var clicksPerSecond = 0;
-var clicks = 0;
+var gainz = setInterval(updateClicks, 1000);
 
-var amountPerClick = 1;
-
-var onClick = function() {
-    clicks += amountPerClick;
-    render();
+if (localStorage.clickcount) {
+    clicks = localStorage.clickcount;
+} else {
+    localStorage.clickcount = 0;
 }
+if (localStorage.c)
+localStorage.setItem("clicks", 0);
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
-var block1CPS = 1;
-var block2CPS = 5;
-var block1Cost = 10;
-var block2Cost = 50;
-var block1Count = 0;
-var block2Count = 0;
+function load() {
+    var clicksPerSecond = 0;
+    var clicks = 0;
+    var amountPerClick = 1;
+    var block1CPS = 1;
+    var block2CPS = 5;
+    var block1Cost = 10;
+    var block2Cost = 50;
+    var block1Count = 0;
+    var block2Count = 0;
+    if (localStorage.clicks) {
+        clicks = localStorage.clicks;
+    }
+    if (localStorage.clicksPerSecond) {
+        clicksPerSecond = localStorage.clicksPerSecond;
+    }
+    if (localStorage.amountPerClick) {
+        amountPerClick = localStorage.amountPerClick;
+    }
+
+}
 
 function click1() {
   if (clicks >= block1Cost) {
@@ -35,12 +51,9 @@ function click2() {
   }
 }
 
-var gainz = setInterval(updateClicks, 1000);
-
 function onClick() {
     clicks += amountPerClick;
-    console.log("document.getElementById");
-    document.getElementById("click_count").innerHTML = "Clicks: " + clicks;
+    render();
 }
 
 function updateClicks() {
