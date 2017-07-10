@@ -1,13 +1,14 @@
+var clicksPerSecond = 0;
+var clicks = 0;
+var amountPerClick = 1;
+var block1CPS = 1;
+var block2CPS = 5;
+var block1Cost = 10;
+var block2Cost = 50;
+var block1Count = 0;
+var block2Count = 0;
+
 function load() {
-    var clicksPerSecond = 0;
-    var clicks = 0;
-    var amountPerClick = 1;
-    var block1CPS = 1;
-    var block2CPS = 5;
-    var block1Cost = 10;
-    var block2Cost = 50;
-    var block1Count = 0;
-    var block2Count = 0;
     if (localStorage.clicks) {
         clicks = localStorage.clicks;
     }
@@ -17,7 +18,34 @@ function load() {
     if (localStorage.amountPerClick) {
         amountPerClick = localStorage.amountPerClick;
     }
+    if (localStorage.block1Count) {
+        block1Count = localStorage.block1Count;
+    }
+    if (localStorage.block2Count) {
+        block2Count = localStorage.block2Count;
+    }
+    console.log(clicks);
+    console.log(clicksPerSecond);
+    console.log(amountPerClick);
+    console.log(block1Count);
+    console.log(block2Count);
 
+}
+
+function save() {
+    localStorage.clicks = clicks;
+    localStorage.clicksPerSecond = clicksPerSecond;
+    localStorage.amountPerClick = amountPerClick;
+    localStorage.block1Count = block1Count;
+    localStorage.block2Count = block2Count;
+}
+
+function reset() {
+    localStorage.clicks = 0;
+    localStorage.clicksPerSecond = 0;
+    localStorage.amountPerClick = 1;
+    localStorage.block1Count = 0;
+    localStorage.block2Count = 0;
 }
 
 function click1() {
@@ -59,7 +87,7 @@ function render() {
   document.getElementById("cps2").innerHTML = block2CPS;
   document.getElementById("cost2").innerHTML = block2Cost;
   document.getElementById("count2").innerHTML = block2Count;
-
+  save();
 }
 
 function updateCPS() {
@@ -68,3 +96,5 @@ function updateCPS() {
 
 var gainz = setInterval(updateClicks, 1000);
 load();
+save();
+reset();
