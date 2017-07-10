@@ -8,10 +8,10 @@ var onClick = function() {
     render();
 }
 
-const block1CPS = 1;
-const block2CPS = 5;
-const block1Cost = 10;
-const block2Cost = 50;
+var block1CPS = 1;
+var block2CPS = 5;
+var block1Cost = 10;
+var block2Cost = 50;
 var block1Count = 0;
 var block2Count = 0;
 
@@ -21,6 +21,7 @@ function click1() {
     block1Count++;
     clicksPerSecond += block1CPS;
     render();
+    updateCPS();
   }
 }
 
@@ -30,10 +31,17 @@ function click2() {
     block2Count++;
     clicksPerSecond += block2CPS;
     render();
+    updateCPS();
   }
 }
 
 var gainz = setInterval(updateClicks, 1000);
+
+function onClick() {
+    clicks += amountPerClick;
+    console.log("document.getElementById");
+    document.getElementById("click_count").innerHTML = "Clicks: " + clicks;
+}
 
 function updateClicks() {
   clicks += clicksPerSecond;
@@ -50,4 +58,8 @@ function render() {
   document.getElementById("cost2").innerHTML = block2Cost;
   document.getElementById("count2").innerHTML = block2Count;
 
+}
+
+function updateCPS() {
+    document.getElementById("cps_count").innerHTML = "Clicks Per Second: " + clicksPerSecond;
 }
